@@ -12,8 +12,14 @@ var Stack = function(){
   };
 
   someInstance.pop = function(){
-    //remove top of stack
-    //return top of stack
+    if( last > -1 ){  
+      //remove top of stack
+      var tmp = storage[last];
+      delete storage[last];
+      last--;
+      //return top of stack
+      return tmp;
+    }
   };
 
   someInstance.size = function(){
