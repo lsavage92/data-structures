@@ -14,3 +14,12 @@ Queue.prototype.enqueue = function(value){
 Queue.prototype.size = function(){
   return this.index - this.nextUp;
 };
+
+Queue.prototype.dequeue = function(){
+  if( this.size()  > 0 ){
+    var tmp = this.storage[this.nextUp];
+    delete this.storage[this.nextUp];
+    this.nextUp++;
+    return tmp;
+  }
+};
