@@ -12,14 +12,16 @@ var Queue = function(){
 };
 
 var queueMethods = {
-    enqueue : function(){
-
+    enqueue : function(value){
+        var storage = this.storage;
+        storage[this.index] = value;
+        this.index++;
     },
     dequeue : function(){
 
     },
     size : function(){
-
+        return this.index - this.nextUp;
     }
 };
 
