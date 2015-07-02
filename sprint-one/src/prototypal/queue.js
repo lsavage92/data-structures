@@ -16,7 +16,12 @@ var queueMethods = {
   },
 
   dequeue: function() {
-
+    if(this.size() > 0) {
+      var tmp = this.storage[this.nextUp];
+      delete this.storage[this.nextUp];
+      this.nextUp++;
+      return tmp;
+    }
   },
 
   size: function() {
