@@ -14,6 +14,7 @@ var LinkedList = function(){
       list.tail = node;
     }
   };
+  // Time complexity: O(1)
 
   list.removeHead = function(){
     if(list.head !== null) {
@@ -22,6 +23,7 @@ var LinkedList = function(){
       return oldHead;
     }
   };
+  // Time complexity: O(1)
 
   list.contains = function(target){
     var node = list.head;
@@ -33,6 +35,7 @@ var LinkedList = function(){
     } while(node !== null);
     return false;
   };
+  // Time complexity: O(n)
 
   return list;
 };
@@ -45,6 +48,7 @@ var Node = function(value){
 
   return node;
 };
+// Time complexity: O(1)
 
 /*
  * Complexity: What is the time complexity of the above functions?
