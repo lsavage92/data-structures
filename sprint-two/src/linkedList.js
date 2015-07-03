@@ -2,7 +2,6 @@ var LinkedList = function(){
   var list = {};
   list.head = null;
   list.tail = null;
-  var counter = 0;
 
   list.addToTail = function(value){
     var node = Node(value);
@@ -14,8 +13,6 @@ var LinkedList = function(){
       list.head = node;
       list.tail = node;
     }
-    list[counter] = node;
-    counter++;
   };
 
   list.removeHead = function(){
@@ -52,3 +49,5 @@ var Node = function(value){
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+// head/tail {4: null} > head {4: {5: null}} tail {5: null}
