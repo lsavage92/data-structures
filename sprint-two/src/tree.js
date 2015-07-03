@@ -20,7 +20,17 @@ Tree.treeMethods.addChild = function(value){
 };
 
 Tree.treeMethods.contains = function(target){
-
+  if( this.value === target ){
+    return true;
+  }
+  else{
+    for( var i = 0; i < this.children.length; i++ ){
+      if( this.children[i].contains(target) ){ //recursive call
+        return true;
+      }
+    }
+    return false;
+  }
 };
 
 
