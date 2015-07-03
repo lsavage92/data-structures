@@ -18,6 +18,7 @@ Tree.treeMethods = {};
 Tree.treeMethods.addChild = function(value){
   this.children.push(Tree(value));
 };
+//Time complexity: O(1)
 
 Tree.treeMethods.contains = function(target){
   if( this.value === target ){
@@ -32,6 +33,7 @@ Tree.treeMethods.contains = function(target){
     return false;
   }
 };
+//Time complexity: O(n)
 
 
 /*
