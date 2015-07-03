@@ -27,6 +27,14 @@ var LinkedList = function(){
   };
 
   list.contains = function(target){
+    var node = list.head;
+    do {
+      if(node.value === target) {
+        return true;
+      }
+      node = node.next;
+    } while(node !== null);
+    return false;
   };
 
   return list;
