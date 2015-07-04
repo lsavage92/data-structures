@@ -15,7 +15,7 @@ HashTable.prototype.insert = function(k, v){
     tmp.push([k, v]);
     this._storage.set(i, tmp);
   }
-  if(this._numItems >= this._limit * 3 / 4 ){
+  if(this._numItems >= this._limit * 7/8 ){
     this._resize(this._limit * 2);
   }
 };
@@ -34,12 +34,16 @@ HashTable.prototype.retrieve = function(k){
 //Time complexity O(1)
 
 HashTable.prototype.remove = function(k){
+  this._numItems--;
   var i = getIndexBelowMaxForKey(k, this._limit);
   var tmp = this._storage.get(i);
   for( var r = 0; r < tmp.length; r++){
     if( k === tmp[r][0] ){
       tmp.splice(r, 1);
     }
+  }
+  if(this._numItems <= this._limit * 1 / 8 && this._limit > 8){
+    this._resize(this._limit / 2);
   }
 };
 //Time complexity O(1)
