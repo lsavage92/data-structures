@@ -8,6 +8,7 @@ var Graph = function(){
 Graph.prototype.addNode = function(node){
   this.storage[node] = {value: node, edges: []};
 };
+//Time complexity O(1)
 
 Graph.prototype.contains = function(node){
   for(var key in this.storage) {
@@ -17,10 +18,12 @@ Graph.prototype.contains = function(node){
   }
   return false;
 };
+//Time complexity O(n)
 
 Graph.prototype.removeNode = function(node){
   delete this.storage[node];
 };
+//Time complexity O(1)
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
   for(var i = 0; i < this.storage[fromNode].edges.length; i++) {
@@ -30,11 +33,13 @@ Graph.prototype.hasEdge = function(fromNode, toNode){
   }
   return false;
 };
+//Time complexity O(n)
 
 Graph.prototype.addEdge = function(fromNode, toNode){
   this.storage[fromNode].edges.push(toNode);
   this.storage[toNode].edges.push(fromNode);
 };
+//Time complexity O(1)
 
 Graph.prototype.removeEdge = function(fromNode, toNode){
   for(var i = 0; i < this.storage[fromNode].edges.length; i++) {
@@ -48,12 +53,14 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
     }
   }
 };
+//Time complexity O(n)
 
 Graph.prototype.forEachNode = function(cb){
   for(var key in this.storage) {
     cb(this.storage[key].value);
   }
 };
+//Time complexity O(n)
 
 /*
  * Complexity: What is the time complexity of the above functions?
