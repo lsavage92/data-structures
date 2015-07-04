@@ -23,11 +23,24 @@ BinarySearchTree.setPrototype.insert = function(value) {
 };
 
 BinarySearchTree.setPrototype.contains = function(value) {
-
+  if(this.value === value) {
+    return true;
+  } else if(value >= this.value && this.right) {
+    return this.right.contains(value);
+  } else if(value < this.value && this.left) {
+    return this.left.contains(value);
+  }
+  return false;
 };
 
 BinarySearchTree.setPrototype.depthFirstLog = function(cb) {
-
+  cb(this.value);
+  if(this.right) {
+    this.right.depthFirstLog(cb);
+  }
+  if(this.left) {
+    this.left.depthFirstLog(cb);
+  }
 };
 
 /*
