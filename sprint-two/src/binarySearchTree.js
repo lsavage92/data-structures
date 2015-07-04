@@ -21,7 +21,7 @@ BinarySearchTree.setPrototype.insert = function(value) {
     this.left.insert(value);
   }
 };
-//Time complexity O(1)
+//Time complexity O(log(n))
 
 BinarySearchTree.setPrototype.contains = function(value) {
   if(this.value === value) {
