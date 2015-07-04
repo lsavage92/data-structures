@@ -12,14 +12,10 @@ setPrototype.add = function(item){
 //Time complexity O(1)
 
 setPrototype.contains = function(item){
-  for( var key in this._storage ){
-    if(this._storage[key] === item){
-      return true;
-    }
-  }
-  return false;
+  //!! coerces to boolean
+  return !!this._storage[item];
 };
-//Time complexity O(n)
+//Time complexity O(1)
 
 setPrototype.remove = function(item){
   delete this._storage[item];
