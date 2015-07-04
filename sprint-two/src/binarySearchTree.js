@@ -21,7 +21,7 @@ BinarySearchTree.setPrototype.insert = function(value) {
     this.left.insert(value);
   }
 };
-//Time complexity O(log(n))
+//Time complexity Average: O(log(n)) Worst: O(n)
 
 BinarySearchTree.setPrototype.contains = function(value) {
   if(this.value === value) {
@@ -33,7 +33,7 @@ BinarySearchTree.setPrototype.contains = function(value) {
   }
   return false;
 };
-//Time complexity O(log(n))
+//Time complexity Average: O(log(n)) Worst: O(n)
 
 BinarySearchTree.setPrototype.depthFirstLog = function(cb) {
   cb(this.value);
