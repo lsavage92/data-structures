@@ -1,4 +1,4 @@
-var Tree = function(value){
+var Tree = function( value ){
   var newTree = {};
   newTree.value = value;
   // {head: {child:{}, child:{}}}
@@ -6,7 +6,7 @@ var Tree = function(value){
   //{value: "value", children: {{value: "value", children:}}}
   // your code here
   newTree.children = [];  // fix me, array?
-  _.extend(newTree, Tree.treeMethods);
+  _.extend( newTree, Tree.treeMethods );
 
   return newTree;
 };
@@ -15,25 +15,26 @@ var Tree = function(value){
 
 Tree.treeMethods = {};
 
-Tree.treeMethods.addChild = function(value){
-  this.children.push(Tree(value));
+Tree.treeMethods.addChild = function( value ){
+  this.children.push( Tree( value ) );
 };
-//Time complexity: O(1)
+//Time complexity: O( 1 )
 
-Tree.treeMethods.contains = function(target){
+Tree.treeMethods.contains = function( target ){
   if( this.value === target ){
     return true;
   }
   else{
-    for( var i = 0; i < this.children.length; i++ ){
-      if( this.children[i].contains(target) ){ //recursive call
+    return this.children.some( function( child ) {
+      if( child.contains( target ) ){
         return true;
       }
-    }
+    } );
+
     return false;
   }
 };
-//Time complexity: O(n)
+//Time complexity: O( n )
 
 
 /*
