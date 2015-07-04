@@ -14,6 +14,7 @@ HashTable.prototype.insert = function(k, v){
     this._storage.set(i, tmp);
   }
 };
+//Time complexity O(1)
 
 HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
@@ -25,6 +26,7 @@ HashTable.prototype.retrieve = function(k){
   }
   return null;
 };
+//Time complexity O(1)
 
 HashTable.prototype.remove = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
@@ -35,7 +37,7 @@ HashTable.prototype.remove = function(k){
     }
   }
 };
-
+//Time complexity O(1)
 
 
 /*
