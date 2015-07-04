@@ -61,7 +61,8 @@ HashTable.prototype._resize = function( size ){
       });
     }
   });
-}
+};
+//Time complexity O(n)
 
 /*
  * Complexity: What is the time complexity of the above functions?
