@@ -21,6 +21,7 @@ BinarySearchTree.setPrototype.insert = function(value) {
     this.left.insert(value);
   }
 };
+//Time complexity O(1)
 
 BinarySearchTree.setPrototype.contains = function(value) {
   if(this.value === value) {
@@ -32,6 +33,7 @@ BinarySearchTree.setPrototype.contains = function(value) {
   }
   return false;
 };
+//Time complexity O(log(n))
 
 BinarySearchTree.setPrototype.depthFirstLog = function(cb) {
   cb(this.value);
@@ -42,6 +44,7 @@ BinarySearchTree.setPrototype.depthFirstLog = function(cb) {
     this.left.depthFirstLog(cb);
   }
 };
+//Time complexity O(n)
 
 /*
  * Complexity: What is the time complexity of the above functions?
